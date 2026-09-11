@@ -1,222 +1,1049 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="True Life Nutrition - Mega Té, batidos, waffles, wraps, avena y snacks en Vega Baja, Puerto Rico. Delivery disponible.">
-<title>True Life Nutrition | Vega Baja, PR</title>
-<style>
-:root{
-  --black:#090909; --dark:#141414; --green:#b7ff00; --yellow:#ffe600;
-  --red:#ff2b1f; --white:#fff; --muted:#cfcfcf;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--black);color:var(--white);line-height:1.5}
-a{text-decoration:none;color:inherit}
-img{width:100%;display:block}
-.container{width:min(1120px,92%);margin:auto}
-header{position:sticky;top:0;z-index:20;background:rgba(9,9,9,.96);border-bottom:2px solid var(--green)}
-.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{font-weight:900;font-size:1.15rem;letter-spacing:1px;color:var(--green)}
-.logo span{color:var(--yellow)}
-nav{display:flex;gap:22px;flex-wrap:wrap;justify-content:flex-end}
-nav a{font-weight:800;font-size:.9rem}
-nav a:hover{color:var(--green)}
-.hero{
-  min-height:650px;display:flex;align-items:center;
-  background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.45)),url('mega-te-green.jpg') center/cover;
-}
-.hero-content{max-width:720px;padding:90px 0}
-.badge{display:inline-block;background:var(--green);color:#000;padding:8px 14px;border-radius:999px;font-weight:900;margin-bottom:18px}
-h1{font-size:clamp(2.7rem,7vw,5.5rem);line-height:.95;text-transform:uppercase;font-weight:1000}
-h1 span{color:var(--green)}
-.hero p{font-size:1.15rem;color:var(--muted);margin:25px 0}
-.buttons{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:14px 22px;border-radius:10px;font-weight:900;border:2px solid var(--green);background:var(--green);color:#000}
-.btn.alt{background:transparent;color:#fff}
-.btn:hover{transform:translateY(-2px)}
-section{padding:80px 0}
-.section-title{text-align:center;margin-bottom:40px}
-.section-title h2{font-size:clamp(2rem,5vw,3.2rem);text-transform:uppercase}
-.section-title p{color:var(--muted);margin-top:8px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--dark);border:1px solid #292929;border-radius:18px;overflow:hidden}
-.card img{height:220px;object-fit:cover}
-.card-body{padding:20px}
-.card h3{font-size:1.35rem;margin-bottom:8px;color:var(--green)}
-.card p{color:var(--muted)}
-.price{font-size:1.35rem;font-weight:900;color:var(--yellow);margin-top:12px}
-.flavors{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:25px}
-.flavor{border:1px solid var(--green);padding:9px 13px;border-radius:999px;font-weight:700;background:#101500}
-.promo{background:linear-gradient(135deg,#1a1a1a,#111);border:2px solid var(--yellow)}
-.promo .price{color:var(--yellow);font-size:2rem}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
-.split img{border-radius:20px;border:2px solid #303030;max-height:500px;object-fit:cover}
-.list{display:grid;gap:15px;margin-top:20px}
-.list div{background:#151515;padding:17px;border-left:4px solid var(--green);border-radius:8px}
-.contact{background:var(--green);color:#000}
-.contact .section-title p{color:#202020}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
-.contact-box{background:#000;color:#fff;padding:25px;border-radius:16px}
-.contact-box h3{color:var(--green);margin-bottom:10px}
-footer{padding:30px 0;text-align:center;color:#999;background:#050505}
-.small{font-size:.9rem;color:#aaa}
-@media(max-width:800px){
-  .nav{align-items:flex-start;padding:18px 0;flex-direction:column}
-  nav{gap:12px}
-  .grid,.split,.contact-grid{grid-template-columns:1fr}
-  .hero{min-height:600px}
-  section{padding:60px 0}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="True Life Nutrition - Mega Té, batidos, waffles, wraps, avena y snacks en Vega Baja, Puerto Rico.">
+  <title>True Life Nutrition | Vega Baja, Puerto Rico</title>
+
+  <style>
+    :root {
+      --black: #050505;
+      --dark: #101010;
+      --dark-2: #171717;
+      --green: #b7ff00;
+      --green-dark: #77ad00;
+      --yellow: #ffd600;
+      --white: #ffffff;
+      --gray: #bdbdbd;
+      --red: #ff3030;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.95);
+      border-bottom: 2px solid var(--green);
+    }
+
+    .nav {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: var(--green);
+      text-transform: uppercase;
+    }
+
+    .logo span {
+      color: var(--yellow);
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav a {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--green);
+    }
+
+    .order-button {
+      background: var(--green);
+      color: #000;
+      padding: 11px 18px;
+      border-radius: 6px;
+      font-weight: 900;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .order-button:hover {
+      background: var(--yellow);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.75) 45%, rgba(0,0,0,.2) 100%),
+        url("mega-te-green.jpg") center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 680px;
+      padding: 80px 0;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 0.95;
+      font-weight: 1000;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--green);
+    }
+
+    .hero p {
+      color: #e5e5e5;
+      font-size: 19px;
+      max-width: 560px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-weight: 900;
+      text-transform: uppercase;
+      transition: 0.2s;
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: #000;
+    }
+
+    .btn-green:hover {
+      background: var(--yellow);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--white);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .delivery-note {
+      margin-top: 20px;
+      color: var(--yellow);
+      font-weight: 800;
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title .small {
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .section-title p {
+      color: var(--gray);
+      max-width: 650px;
+      margin: auto;
+    }
+
+    /* CATEGORIES */
+
+    .categories {
+      background: #0b0b0b;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .category-card {
+      min-height: 190px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #303030;
+      border-radius: 10px;
+      background: var(--dark-2);
+      display: flex;
+      align-items: flex-end;
+      padding: 25px;
+      transition: 0.25s;
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--green);
+    }
+
+    .category-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.55;
+    }
+
+    .category-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,.95));
+    }
+
+    .category-card h3 {
+      position: relative;
+      z-index: 2;
+      font-size: 25px;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .category-card h3 span {
+      color: var(--green);
+    }
+
+    /* MEGA TE */
+
+    .mega {
+      background: var(--black);
+    }
+
+    .mega-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .mega-image {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid var(--green);
+      box-shadow: 0 0 35px rgba(183,255,0,.12);
+    }
+
+    .mega-text h2 {
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .mega-text h2 span {
+      color: var(--green);
+    }
+
+    .mega-text p {
+      color: var(--gray);
+      margin-bottom: 25px;
+    }
+
+    .flavors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 25px 0;
+    }
+
+    .flavor {
+      padding: 8px 13px;
+      border: 1px solid #444;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .flavor:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    /* PROMOTION */
+
+    .promotion {
+      background: var(--green);
+      color: #000;
+      padding: 30px 0;
+    }
+
+    .promotion-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .promotion h2 {
+      font-size: clamp(26px, 4vw, 44px);
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .promotion p {
+      font-weight: 800;
+    }
+
+    .promo-button {
+      background: #000;
+      color: var(--green);
+      padding: 13px 22px;
+      border-radius: 6px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    /* WHY US */
+
+    .why {
+      background: #0b0b0b;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .why-card {
+      background: var(--dark-2);
+      border: 1px solid #2d2d2d;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .icon {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 18px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green);
+      color: #000;
+      font-size: 25px;
+      font-weight: 900;
+    }
+
+    .why-card h3 {
+      color: var(--yellow);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .why-card p {
+      color: var(--gray);
+      font-size: 15px;
+    }
+
+    /* MENU */
+
+    .menu-section {
+      background: var(--black);
+    }
+
+    .menu-image {
+      max-width: 950px;
+      margin: auto;
+      border: 2px solid var(--green);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    /* DELIVERY */
+
+    .delivery {
+      background:
+        linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.92)),
+        url("location.jpg") center/cover no-repeat;
+    }
+
+    .delivery-box {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .delivery-box h2 {
+      font-size: clamp(35px, 5vw, 58px);
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .delivery-box h2 span {
+      color: var(--green);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .step {
+      background: rgba(15,15,15,.85);
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 25px;
+    }
+
+    .step-number {
+      color: var(--green);
+      font-size: 35px;
+      font-weight: 1000;
+    }
+
+    .step h3 {
+      text-transform: uppercase;
+      margin: 5px 0;
+    }
+
+    .step p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #080808;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: var(--dark-2);
+      border: 1px solid #303030;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .contact-card h3 {
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: var(--gray);
+    }
+
+    .contact-card a {
+      color: var(--yellow);
+      font-weight: 800;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #000;
+      border-top: 1px solid #292929;
+      padding: 35px 0;
+      text-align: center;
+    }
+
+    footer .logo {
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      color: #777;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .nav {
+        padding: 15px 0;
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      .hero {
+        min-height: 600px;
+      }
+
+      .category-grid,
+      .why-grid,
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .mega-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .promotion-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      section {
+        padding: 60px 0;
+      }
+
+      .category-grid,
+      .why-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        padding: 60px 0;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      nav {
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <div class="container nav">
-    <a href="#inicio" class="logo">TRUE LIFE <span>NUTRITION</span></a>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#menu">Menú</a>
-      <a href="#mega-te">Mega Té</a>
-      <a href="#promociones">Promociones</a>
-      <a href="#nosotros">Nosotros</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </div>
-</header>
+  <!-- HEADER -->
 
-<main>
-<section id="inicio" class="hero">
-  <div class="container hero-content">
-    <div class="badge">VEGA BAJA, PUERTO RICO • DELIVERY DISPONIBLE</div>
-    <h1>Transforma tu <span>energía.</span><br>Eleva tu bienestar.</h1>
-    <p>Disfruta nuestros Mega Té, batidos, waffles, wraps, avena y snacks preparados para acompañar tu día.</p>
-    <div class="buttons">
-      <a class="btn" href="#menu">Ver menú</a>
-      <a class="btn alt" href="tel:+17875500206">Ordenar ahora</a>
-    </div>
-  </div>
-</section>
+  <header>
+    <div class="container nav">
 
-<section id="menu">
-  <div class="container">
-    <div class="section-title">
-      <h2>Nuestro Menú</h2>
-      <p>Opciones deliciosas para diferentes momentos del día.</p>
-    </div>
-    <div class="grid">
-      <article class="card"><img src="mega-te-flavors.jpg" alt="Mega Té"><div class="card-body"><h3>Mega Té</h3><p>Refrescantes y llenos de sabor. Pregunta por los sabores disponibles.</p><div class="price">Desde $8</div></div></article>
-      <article class="card"><img src="menu.jpg" alt="Batidos"><div class="card-body"><h3>Batidos</h3><p>Una opción deliciosa para complementar tu rutina.</p></div></article>
-      <article class="card"><img src="mega-te-waffle.jpg" alt="Waffles"><div class="card-body"><h3>Waffles</h3><p>Perfectos para acompañar tu Mega Té favorito.</p></div></article>
-      <article class="card"><img src="menu.jpg" alt="Wraps"><div class="card-body"><h3>Wraps</h3><p>Una opción práctica y sabrosa para tu día.</p></div></article>
-      <article class="card"><img src="menu.jpg" alt="Avena"><div class="card-body"><h3>Avena</h3><p>Una alternativa reconfortante para comenzar el día.</p></div></article>
-      <article class="card"><img src="green-apple.jpg" alt="Snacks"><div class="card-body"><h3>Snacks</h3><p>Opciones para disfrutar entre comidas.</p></div></article>
-    </div>
-  </div>
-</section>
+      <a href="#inicio" class="logo">
+        True Life <span>Nutrition</span>
+      </a>
 
-<section id="mega-te">
-  <div class="container">
-    <div class="section-title">
-      <h2>¡Mega Té!</h2>
-      <p>Elige tu sabor favorito.</p>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#menu">Menú</a>
+        <a href="#mega">Mega Té</a>
+        <a href="#promociones">Promociones</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <a class="order-button" href="tel:17875500206">
+        Ordenar
+      </a>
+
     </div>
-    <div class="split">
-      <img src="mega-te-green.jpg" alt="Mega Té verde">
-      <div>
-        <h2 style="font-size:2rem;color:var(--green);margin-bottom:10px">Sabores para todos los gustos</h2>
-        <p class="small">Disponibilidad puede variar. Llámanos para confirmar el sabor del día.</p>
-        <div class="flavors">
-          <span class="flavor">Green Apple</span><span class="flavor">Strawberry Kiwi</span>
-          <span class="flavor">Mango Fresa</span><span class="flavor">Piña</span>
-          <span class="flavor">Coco</span><span class="flavor">Limón</span>
-          <span class="flavor">Uva</span><span class="flavor">Blue Blast</span>
-          <span class="flavor">Parcha</span><span class="flavor">China</span>
-          <span class="flavor">Mango Coco</span><span class="flavor">Piña Coco</span>
-          <span class="flavor">Fresa Mango</span><span class="flavor">Fresa Mango Piña</span>
+  </header>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero" id="inicio">
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            Vega Baja, Puerto Rico
+          </div>
+
+          <h1>
+            Transforma tu energía.<br>
+            <span>Eleva tu bienestar.</span>
+          </h1>
+
+          <p>
+            Descubre nuestros Mega Té, batidos, waffles, wraps,
+            avena y snacks preparados para acompañar tu estilo de vida.
+          </p>
+
+          <div class="buttons">
+            <a href="#menu" class="btn btn-green">
+              Ver menú
+            </a>
+
+            <a href="tel:17875500206" class="btn btn-outline">
+              Ordenar ahora
+            </a>
+          </div>
+
+          <div class="delivery-note">
+            🚗 Delivery disponible
+          </div>
+
         </div>
+
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section id="promociones">
-  <div class="container">
-    <div class="section-title">
-      <h2>Promociones</h2>
-      <p>Especiales basados en nuestras promociones.</p>
-    </div>
-    <div class="grid">
-      <article class="card promo"><img src="mega-te-waffle.jpg" alt="Mega Té y Waffle"><div class="card-body"><h3>Mega Té + Waffle</h3><p>Disfruta el combo especial.</p><div class="price">$17</div></div></article>
-      <article class="card promo"><img src="green-apple.jpg" alt="Green Apple"><div class="card-body"><h3>Green Apple</h3><p>Uno de nuestros favoritos.</p><div class="price">$10</div></div></article>
-      <article class="card promo"><img src="mega-te-green.jpg" alt="Mega Té"><div class="card-body"><h3>Mega Té</h3><p>Una opción refrescante.</p><div class="price">$8</div></div></article>
-    </div>
-  </div>
-</section>
 
-<section id="nosotros">
-  <div class="container">
-    <div class="split">
-      <img src="location.jpg" alt="True Life Nutrition en Vega Baja">
-      <div>
-        <div class="section-title" style="text-align:left;margin-bottom:15px"><h2>¿Por qué True Life Nutrition?</h2></div>
-        <div class="list">
-          <div><strong>Variedad</strong><br>Tenemos diferentes opciones y sabores para que encuentres tus favoritos.</div>
-          <div><strong>Calidad y sabor</strong><br>Preparamos nuestras opciones con atención a cada detalle.</div>
-          <div><strong>Conveniencia</strong><br>Estamos en Vega Baja y contamos con delivery disponible.</div>
+    <!-- CATEGORIES -->
+
+    <section class="categories" id="menu">
+
+      <div class="container">
+
+        <div class="section-title">
+          <div class="small">Descubre nuestro menú</div>
+          <h2>Elige tu favorito</h2>
+          <p>
+            Opciones deliciosas para comenzar tu día,
+            recargar energía o disfrutar algo diferente.
+          </p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section>
-  <div class="container">
-    <div class="section-title">
-      <h2>¿Quieres ordenar?</h2>
-      <p>Es fácil.</p>
-    </div>
-    <div class="grid">
-      <article class="card"><div class="card-body"><h3>1. Llámanos</h3><p>Comunícate con nosotros para confirmar disponibilidad.</p></div></article>
-      <article class="card"><div class="card-body"><h3>2. Escoge</h3><p>Elige tu Mega Té, comida o promoción favorita.</p></div></article>
-      <article class="card"><div class="card-body"><h3>3. Recibe</h3><p>Pregunta por nuestras opciones de delivery.</p></div></article>
-    </div>
-  </div>
-</section>
+        <div class="category-grid">
 
-<section id="contacto" class="contact">
-  <div class="container">
-    <div class="section-title">
-      <h2>Contáctanos</h2>
-      <p>Estamos para ayudarte.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-box">
-        <h3>Ubicación</h3>
-        <p>Urb. Monte Carlos, Ave. Las Flores #8<br>Vega Baja, PR 00963</p>
-        <br>
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Urb.%20Monte%20Carlos%2C%20Ave.%20Las%20Flores%20%238%2C%20Vega%20Baja%2C%20PR%2000963" target="_blank" rel="noopener">Abrir Google Maps</a>
-      </div>
-      <div class="contact-box">
-        <h3>Teléfono</h3>
-        <p style="font-size:1.5rem;font-weight:900">787-550-0206</p>
-        <br>
-        <a class="btn" href="tel:+17875500206">Llamar ahora</a>
-        <p class="small" style="margin-top:18px">Delivery disponible. Consulta nuestro horario actualizado al llamar.</p>
-      </div>
-    </div>
-  </div>
-</section>
-</main>
+          <a href="#mega" class="category-card">
+            <img src="mega-te-green.jpg" alt="Mega Té">
+            <h3><span>Mega</span> Té</h3>
+          </a>
 
-<footer>
-  <div class="container">
-    <strong>TRUE LIFE NUTRITION</strong>
-    <p class="small">Vega Baja, Puerto Rico • Delivery disponible</p>
-    <p class="small">© 2026 True Life Nutrition. Todos los derechos reservados.</p>
-  </div>
-</footer>
+          <a href="#menu-completo" class="category-card">
+            <img src="menu.jpg" alt="Batidos">
+            <h3>Batidos</h3>
+          </a>
+
+          <a href="#menu-completo" class="category-card">
+            <img src="mega-te-waffle.jpg" alt="Waffles">
+            <h3>Waffles</h3>
+          </a>
+
+          <a href="#menu-completo" class="category-card">
+            <img src="menu.jpg" alt="Wraps">
+            <h3>Wraps</h3>
+          </a>
+
+          <a href="#menu-completo" class="category-card">
+            <img src="menu.jpg" alt="Avena">
+            <h3>Avena</h3>
+          </a>
+
+          <a href="#menu-completo" class="category-card">
+            <img src="menu.jpg" alt="Snacks">
+            <h3>Snacks</h3>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- MEGA TE -->
+
+    <section class="mega" id="mega">
+
+      <div class="container mega-layout">
+
+        <div class="mega-image">
+          <img src="mega-te-flavors.jpg" alt="Mega Té de True Life Nutrition">
+        </div>
+
+        <div class="mega-text">
+
+          <div class="eyebrow">
+            Nuestro favorito
+          </div>
+
+          <h2>
+            Mega <span>Té</span>
+          </h2>
+
+          <p>
+            Refrescante, colorido y lleno de sabor.
+            Elige tu combinación favorita y disfruta una bebida
+            preparada especialmente para ti.
+          </p>
+
+          <div class="flavors">
+
+            <div class="flavor">Green Apple</div>
+            <div class="flavor">Strawberry Kiwi</div>
+            <div class="flavor">Mango Fresa</div>
+            <div class="flavor">Piña</div>
+            <div class="flavor">Coco</div>
+            <div class="flavor">Limón</div>
+            <div class="flavor">Uva</div>
+            <div class="flavor">Blue Blast</div>
+            <div class="flavor">Parcha</div>
+            <div class="flavor">China</div>
+            <div class="flavor">Mango Coco</div>
+            <div class="flavor">Piña Coco</div>
+            <div class="flavor">Fresa Mango</div>
+            <div class="flavor">Fresa Mango Piña</div>
+
+          </div>
+
+          <a href="tel:17875500206" class="btn btn-green">
+            Ordenar Mega Té
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROMOTIONS -->
+
+    <section class="promotion" id="promociones">
+
+      <div class="container promotion-inner">
+
+        <div>
+          <h2>¡Promociones especiales!</h2>
+          <p>
+            Pregunta por nuestras ofertas disponibles.
+          </p>
+        </div>
+
+        <a href="tel:17875500206" class="promo-button">
+          Ordenar ahora
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- MENU IMAGE -->
+
+    <section class="menu-section" id="menu-completo">
+
+      <div class="container">
+
+        <div class="section-title">
+          <div class="small">True Life Nutrition</div>
+          <h2>Nuestro menú</h2>
+          <p>
+            Explora nuestras opciones disponibles.
+          </p>
+        </div>
+
+        <div class="menu-image">
+          <img src="menu.jpg" alt="Menú de True Life Nutrition">
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WHY US -->
+
+    <section class="why" id="nosotros">
+
+      <div class="container">
+
+        <div class="section-title">
+          <div class="small">¿Por qué elegirnos?</div>
+          <h2>True Life Nutrition</h2>
+          <p>
+            Queremos hacer que disfrutar tus favoritos sea fácil,
+            rápido y delicioso.
+          </p>
+        </div>
+
+        <div class="why-grid">
+
+          <div class="why-card">
+            <div class="icon">✓</div>
+            <h3>Calidad</h3>
+            <p>
+              Trabajamos para ofrecer productos preparados
+              con atención y cuidado.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="icon">★</div>
+            <h3>Variedad</h3>
+            <p>
+              Diferentes sabores y opciones para que encuentres
+              algo que te guste.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="icon">⚡</div>
+            <h3>Rápido</h3>
+            <p>
+              Opciones prácticas para acompañar tus días ocupados.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="icon">♥</div>
+            <h3>Hecho con cariño</h3>
+            <p>
+              Cada pedido es preparado pensando en nuestros clientes.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="icon">🚗</div>
+            <h3>Delivery</h3>
+            <p>
+              Consulta disponibilidad de delivery en tu área.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="icon">🔥</div>
+            <h3>Sabor</h3>
+            <p>
+              Combinaciones llamativas y sabores que querrás repetir.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- DELIVERY -->
+
+    <section class="delivery">
+
+      <div class="container delivery-box">
+
+        <div class="eyebrow">
+          Ordena desde donde estés
+        </div>
+
+        <h2>
+          Tu favorito,<br>
+          <span>hasta tu puerta.</span>
+        </h2>
+
+        <p>
+          Comunícate con nosotros para conocer la disponibilidad
+          de delivery y realizar tu pedido.
+        </p>
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="step-number">01</div>
+            <h3>Escoge</h3>
+            <p>
+              Selecciona tu bebida o comida favorita.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">02</div>
+            <h3>Ordena</h3>
+            <p>
+              Llámanos para confirmar tu pedido.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">03</div>
+            <h3>Disfruta</h3>
+            <p>
+              Recibe tu pedido y disfruta.
+            </p>
+          </div>
+
+        </div>
+
+        <div style="margin-top:35px;">
+          <a href="tel:17875500206" class="btn btn-green">
+            📞 787-550-0206
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contacto">
+
+      <div class="container">
+
+        <div class="section-title">
+          <div class="small">Estamos para servirte</div>
+          <h2>Contáctanos</h2>
+          <p>
+            ¿Tienes alguna pregunta o quieres realizar un pedido?
+            Comunícate con nosotros.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+
+          <div class="contact-card">
+            <h3>📍 Ubicación</h3>
+            <p>
+              Urb. Monte Carlos<br>
+              Ave. Las Flores #8<br>
+              Vega Baja, PR 00963
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <h3>📞 Teléfono</h3>
+            <p>
+              <a href="tel:17875500206">
+                787-550-0206
+              </a>
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <h3>📧 Contáctanos</h3>
+            <p>
+              Escríbenos para pedidos,
+              preguntas y disponibilidad.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="logo">
+        True Life <span>Nutrition</span>
+      </div>
+
+      <p>
+        © 2026 True Life Nutrition. Todos los derechos reservados.
+      </p>
+
+      <p>
+        Vega Baja, Puerto Rico
+      </p>
+
+    </div>
+
+  </footer>
+
 </body>
 </html>
